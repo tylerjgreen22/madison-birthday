@@ -28,7 +28,7 @@ export default function Cards() {
   const [previousCardState, setPreviousCardState] = useState(-1);
   const previousIndex = useRef(-1);
 
-  const matchCheck = (currentCard) => {
+  const matchCheck = (currentCard: number) => {
     if (cards[currentCard].id === cards[previousCardState].id) {
       cards[previousCardState].status = "active matched";
       cards[currentCard].status = "active matched";
@@ -45,7 +45,7 @@ export default function Cards() {
     }
   };
 
-  const clickhandler = (index) => {
+  const clickhandler = (index: number) => {
     if (index !== previousIndex.current) {
       if (cards[index].status === "active matched") {
         alert("already matched");
